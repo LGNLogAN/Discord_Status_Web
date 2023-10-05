@@ -53,22 +53,22 @@ function textTypingAnimation(){
 const ani_line = document.querySelector('.line');
 
 
-// let animationline = new IntersectionObserver((animationline_Parameter_1)=>{
-//     animationline_Parameter_1.forEach(entry => {
-//         if(entry.isIntersecting){
-//             printAnimationLine();
-//         }else{
-//             ani.style.width = '0cm';
-//         }
-//     })
-// })
+let animationline = new IntersectionObserver((animationline_Parameter_1)=>{
+    animationline_Parameter_1.forEach(entry => {
+        if(entry.isIntersecting){
+            ani_line.style.width = '20cm';
+        }else{
+            ani_line.style.width = '0cm';
+        }
+    })
+})
 
-// let isObserving_2 = document.querySelector('.line');
-// animationline.observe(isObserving_2);
+let isObserving_2 = document.querySelector('.line');
+animationline.observe(isObserving_2);
 
-// function printAnimationLine(){
-   
-// } 
+/*
 window.addEventListener('load',()=> {
         ani_line.style.width = '20cm';
-    });
+});
+새로고침시 발생하는 이벤트
+*/
