@@ -1,0 +1,108 @@
+
+header{
+    text-align: center;
+    border-bottom:solid 1px;
+}
+
+#subNav{
+    float: left;
+    border-right:solid 1px;
+    padding-right: 20px;
+    margin-left:-20px;
+}
+
+.subNavIcon{
+    color : inherit;
+}
+li{
+    list-style-type: none;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.none-button{
+    border:none; 
+    cursor: pointer; 
+    padding: 0; 
+    margin: 0; 
+    background-color: transparent;
+}
+.none-button_2{
+    border:none; 
+    cursor: pointer; 
+    padding: 0; 
+    margin: 0; 
+    background-color: transparent;
+}
+.copy-button{
+    text-align:right;
+    margin-right: 20px;
+    margin-top: -25px;
+}
+
+.discord-card{
+    display: none;
+    position: fixed;
+    left:85px;
+    top: 210px;
+    width: 348px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #011522;
+    border-radius: 8px;
+}
+.discord-card-content {
+    text-align: center;
+    color:white;
+}
+
+img{
+    border-radius: 50%;
+}
+
+.tools {
+display: flex;
+align-items: center;
+padding: 9px;
+}
+
+.circle {
+padding: 0 4px;
+}
+
+.box {
+display: inline-block;
+align-items: center;
+width: 10px;
+height: 10px;
+padding: 1px;
+border-radius: 50%;
+}
+.red {
+background-color: #ff605c;
+}
+.yellow {
+background-color: #ffbd44;
+}
+.green {
+background-color: #00ca4e;
+}
+.gmail{
+    display: none;
+    position: fixed;
+    left:85px;
+    top: 265px;
+    width: 348px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #011522;
+    border-radius: 8px;
+}
+
+.gmail-card-content{
+    color : white;
+    text-align : left;
+    margin-left : 20px;
+    margin-top : 10px;
+
+}
