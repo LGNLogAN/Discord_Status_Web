@@ -110,10 +110,8 @@ let isObserving_3 = new IntersectionObserver((helloworldBox_Parameter)=>{
         }
     })
 })
-
 let helloworld = document.querySelector(".javacodingBox_result");
 isObserving_3.observe(helloworld);
-
 
 /* Hello World ! 출력 코드 */
 
