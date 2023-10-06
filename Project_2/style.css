@@ -30,13 +30,71 @@ a{
 
 .subtitle{
     text-align: center;
+    padding-bottom: 100px;
 }
 
 .line{
     width: 0cm;
     transition: all 1s;
 }
+.card_1{
+    display: block;
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #011522;
+    border-radius: 8px;
+    z-index: 1;
+    opacity: 1;
+    transition: all 3s;
+}
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+.circle {
+    padding: 0 4px;
+}
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+.red {
+    background-color: #ff605c;
+}
+.yellow {
+    background-color: #ffbd44;
+}
+.green {
+    background-color: #00ca4e;
+}
 
+pre {
+    padding-left: 50px;
+}
+.javacode{
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+   
+.card_content_text{
+    color: white;
+}
+
+.javacodingBox_result{
+    color : white;
+    font-family: 'NanumSquare';
+    text-align: center;
+    font-size: 100px;
+    opacity: 0;
+    transform: translateY(120px);
+    transition: all 1.5s;
+}
 .navbar{ 
     display : flex;
     justify-content: space-between;
@@ -78,6 +136,7 @@ a{
     text-align: center;
     color : white;
 }
+
 @media screen and (max-width : 768px){
     .navbar_bar{
         display: block;
@@ -106,6 +165,9 @@ a{
         width: 100%;
     }
 
+    .cardtotal{
+        display: none;
+    }
     .navbar_icons.active , .navbar_menu.active {
         display : flex;
     }
