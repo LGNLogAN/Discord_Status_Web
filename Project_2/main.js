@@ -1,5 +1,4 @@
 const togglebtn = document.querySelector('.navbar_bar');
-
 const menu = document.querySelector('.navbar_menu');
 const icons = document.querySelector('.navbar_icons');
 
