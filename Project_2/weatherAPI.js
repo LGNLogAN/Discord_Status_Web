@@ -3,29 +3,59 @@ let city = '';
 let AnyWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
 let SeoulWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=${API_KEY}&units=metric`;
+const tenHours = 10 * 60 * 60 * 1000;
+const oneHours = 1 * 60 * 60 * 1000;
+const now = new Date();
+function updateWeather(){
+    fetch(SeoulWeatherAPI).then(
+        (response)=>{ 
+            return response.json(); 
+    })
+    .then(json =>{
+        let cityKorea = json.name;
+        let temperatureValue = json.main.temp;
+        let weatherinfo = json.weather[0].main;
+        if(cityKorea=="Seoul"){
+            cityKorea = "서울";
+        }
 
-fetch(SeoulWeatherAPI).then(
-    (response)=>{ 
-        return response.json(); 
-})
-.then(json =>{
-    let temper = json.main.temp;
-    document.getElementById("temp").innerHTML = Math.floor(temper) + "°";
-})
+        if(weatherinfo=="Clouds"){
+            weatherinfo = "흐림";
+        }
+        document.querySelector(".location").innerHTML = cityKorea;
+        document.getElementById("temperature").innerHTML = Math.floor(temperatureValue);
+        document.querySelector(".weatherinfo").innerHTML = weatherinfo;
+    })
+}
 
-fetch(SeoulWeatherAPI).then(
-    (response)=>{ 
-        return response.json(); 
-})
-.then(json =>{
-    let cityKorea = json.name;
 
-    if(cityKorea=="Seoul"){
-        cityKorea = "서울";
-    }
-    
-    document.getElementById("city").innerHTML = cityKorea;
-})
+
+updateWeather();
+setInterval(updateWeather, 1000);
+
+function getDate(){
+    var todayDate = 
+    `${ now.getFullYear() }년 ${ now.getMonth() + 1 }월 ${ now.getDate() }일`
+    document.querySelector(".yearmonthday").innerHTML = todayDate;
+}
+
+getDate();
+setInterval(getDate,oneHours);
+
+
+function updateTime() {
+    const date = new Date();
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    // const seconds = date.getSeconds().toString().padStart(2, '0');
+    // return `${hours}:${minutes}:${seconds}`;
+    return `${hours} : ${minutes}`;
+}
+
+setInterval(() => {
+    const currentTime = updateTime();
+    document.getElementById('time').innerText = currentTime;
+}, 1000);
 
 
 
