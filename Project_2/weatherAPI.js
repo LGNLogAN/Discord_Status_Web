@@ -5,23 +5,39 @@ let AnyWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&a
 let SeoulWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=${API_KEY}&units=metric`;
 const tenHours = 10 * 60 * 60 * 1000;
 const oneHours = 1 * 60 * 60 * 1000;
+
 const now = new Date();
+
 function updateWeather(){
     fetch(SeoulWeatherAPI).then(
         (response)=>{ 
             return response.json(); 
     })
     .then(json =>{
+        Dayday = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]
+        
         let cityKorea = json.name;
         let temperatureValue = json.main.temp;
         let weatherinfo = json.weather[0].main;
+        let dayOfWeek = now.getDay();
+
+        for(i=0; i<7; i++){
+            if(i==dayOfWeek){
+                dayOfWeek = Dayday[i];
+                break;
+            }
+        }
+
         if(cityKorea=="Seoul"){
             cityKorea = "서울";
         }
 
         if(weatherinfo=="Clouds"){
             weatherinfo = "흐림";
+        }else if(weatherinfo=="Clear"){
+            weatherinfo = "맑음";
         }
+        document.querySelector(".dayoftheweek").innerHTML = dayOfWeek;
         document.querySelector(".location").innerHTML = cityKorea;
         document.getElementById("temperature").innerHTML = Math.floor(temperatureValue);
         document.querySelector(".weatherinfo").innerHTML = weatherinfo;
@@ -57,20 +73,6 @@ setInterval(() => {
     document.getElementById('time').innerText = currentTime;
 }, 1000);
 
-
-
-
-
-// function getWeatherTemp(){
-//     fetch(WeatherAPI)
-//         .then(function(res){
-//             return res.json();
-//         })
-//         .then(json =>{
-//             document.getElementById("temp").innerHTML = json.main.temp;
-//             // console.log(json.main.temp);
-//         })
-// }
 
 
 // API를 통해 json 형식의 데이터를 받고 res 라는 매개변수에 저장하는데 res.json() 이 코드에서 json()이 함수를 통해 res 를 json
