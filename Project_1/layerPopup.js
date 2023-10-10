@@ -22,5 +22,4 @@ function copyClipboard() {
     textarea.remove();
     alert("복사되었습니다.");
   }
-  
 document.getElementById('copybutton').addEventListener('click', copyClipboard);
