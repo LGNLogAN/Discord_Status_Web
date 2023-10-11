@@ -14,6 +14,7 @@ function dayOfTheWeek(){
     }
     return getDayOfTheWeek;
 }
+
 function cityKorea(getCity){
     if(getCity=="Seoul"){
         getCity = "서울";
@@ -21,6 +22,7 @@ function cityKorea(getCity){
 
     return getCity;
 }
+
 function weatherInfo(EngWeatherInfo){
     if(EngWeatherInfo=="Clouds"){
         EngWeatherInfo = "흐림";
@@ -30,6 +32,7 @@ function weatherInfo(EngWeatherInfo){
 
     return EngWeatherInfo;
 }
+
 function sunriseUnixTime(SunriseUnix){
     const sunriseDate = new Date(SunriseUnix * 1000);
     const sunriseHours = sunriseDate.getHours().toString().padStart(2, '0');
@@ -38,10 +41,12 @@ function sunriseUnixTime(SunriseUnix){
 
     return sunrise;
 }
+
 function getDate(){
     var todayDate = `${ date.getFullYear() }년 ${ date.getMonth() + 1 }월 ${ date.getDate() }일`
     return todayDate;
 }
+
 function getTime() {
     const hours = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
