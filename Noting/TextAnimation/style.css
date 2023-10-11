@@ -1,0 +1,13 @@
+/* Add your styles for the typing animation here */
+.typing-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.typing-text {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    white-space: pre;
+}

@@ -2,6 +2,7 @@ function changeLocation(){
     document.querySelector(".changelocation_view").style.display = "block";
 }
 
-document.querySelector(".closeview").addEventListener("click",() =>{
+function closeView(){
     document.querySelector(".changelocation_view").style.display = "none";
-})
+}
+

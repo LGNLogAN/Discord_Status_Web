@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/fabicon.png" type="image/x-icon">
     <title>Libere Flore</title>
-    <link rel="stylesheet" href="../StyleSheet/style.css">
+
+    <!-- 스타일 시트 -->
+    <link rel="stylesheet" href="../Main_Web_Project/StyleSheet/style.css">
+    <link rel="stylesheet" href="../Main_Web_Project/StyleSheet/Header.css">
+    <link rel="stylesheet" href="../Main_Web_Project/StyleSheet/InfomationSection.css">
+    <link rel="stylesheet" href="../Main_Web_Project/StyleSheet/WeatherBox.css">
+    <!-- 스타일 시트 -->
+
+    <!-- 폰트 외 라이브러리 -->
     <script src="https://kit.fontawesome.com/1e1327e294.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/fabicon.png" type="image/x-icon">
-    
-    <script src="../Javascript/weatherAPI.js" defer></script>
-    <script src="../Javascript/changelocation.js" defer></script>
+    <!-- 폰트 외 라이브러리 -->
 
+    <!-- JS -->
+    <script src="../Main_Web_Project/Javascript/WeatherAPI.js" defer></script>
+    <script src="../Main_Web_Project/Javascript/LocationChange.js" defer></script>
+    <!-- JS -->
     
 </head>
 <body>
@@ -25,8 +35,8 @@
             </a>
         </div>
         <ul class="navbar_menu">
-            <li><a href="../Information/index.html">Information</a></li>
-            <li><a href="../Weather/Weather.html">Weather</a></li>
+            <li><a href="index.html">Information</a></li>
+            <li><a href="Weather.html">Weather</a></li>
             <li><a href="#">Discord Server</a></li>
             <li><a href="#">PC</a></li>
             <li><a href="#">Etc</a></li>
@@ -58,9 +68,23 @@
         <div class="weathertotal">
             <div class="changelocation_view" id="changelocation_view">
                 <div class="searchingIcon"></div>
-                <div class="searchingBar"></div>
+                <div class="searchingBar">
+                    <svg width="35" height="35" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m21 21-6-6m2-5a7.001 7.001 0 0 1-11.95 4.95A7 7 0 1 1 17 10Z"></path>
+                    </svg>
+                    <input type="text" name="citySeach" class="textbox">
+
+                </div>
+
+                <div class="enter">
+                    <svg width="25" height="25" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m5.25 16.5-3-3 3-3"></path>
+                        <path d="M3 13.5h13.781c2.755 0 4.969-2.312 4.969-5.063V7.5"></path>
+                    </svg>
+                </div>
+                
                 <div class="close">
-                    <a href="#" class="closeview">
+                    <a href="#" class="closeview" onclick="return closeView();">
                         <svg width="35" height="35" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M5.152 5.152a1.2 1.2 0 0 1 1.696 0L12 10.303l5.152-5.151a1.2 1.2 0 1 1 1.696 1.696L13.697 12l5.151 5.152a1.2 1.2 0 0 1-1.696 1.696L12 13.697l-5.152 5.151a1.2 1.2 0 0 1-1.696-1.696L10.303 12 5.152 6.848a1.2 1.2 0 0 1 0-1.696Z" clip-rule="evenodd"></path>
                         </svg> 
@@ -68,7 +92,18 @@
                 </div>
                 
                 
-                <div class="kindoflocation"> </div>
+                <div class="kindoflocation">
+                    <ul>
+                        <li>서울</li>
+                        <li>부산</li>
+                        <li>경기도</li>
+                        <li>부산</li>
+                        <li>부산</li>
+                        <li>부산</li>
+                        <li>부산</li>
+
+                    </ul>
+                </div>
                 <div class="submitButton"></div>
             </div>
             <div class="weatherbox">

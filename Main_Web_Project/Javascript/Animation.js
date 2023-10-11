@@ -115,13 +115,6 @@ isObserving_3.observe(helloworld);
 /* Hello World ! 출력 코드 */
 
 
-
-
-
-
-
-
-
 /* 새로고침시 발생하는 이벤트
 window.addEventListener('load',()=> {
         ani_line.style.width = '20cm';

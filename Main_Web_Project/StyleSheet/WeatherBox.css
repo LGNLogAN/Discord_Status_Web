@@ -1,0 +1,184 @@
+.weathertotal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+.weatherbox{
+    width: 300px; height: 400px;
+    background-image: url('../img/sky.jpg');
+    background-size: auto;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.temperature{
+    display: flex;
+}
+.weathersidebox{
+    position: absolute;
+    width: 300px;
+    height: 360px;
+    border-radius: 15px;
+    background: #191d23;
+    transition: all 1s;
+    /* transform: translateX(260px); */
+    transform: translateX(25px);
+}
+
+.weathersidebox:hover{
+    transform: translateX(260px);
+}
+
+.dayoftheweek{
+    padding : 25px  20px  10px  20px; /*(top), 오른쪽(right), 하단(bottom), 왼쪽(left) */
+    font-family: 'NPSfontBold';
+    color : white;
+    font-weight: bold;
+    font-size : 35px;
+}
+.yearmonthday{
+    padding-left : 20px;
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-weight: bold;
+    font-size : 23px;
+    padding-bottom: 4px;
+}
+.map_pin{
+    padding-left: 15px;
+    display: flex;
+}
+.location{
+    padding-top : 2px;
+    padding-left : 5px;
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-weight: bold;
+    font-size : 20px;
+}
+
+.weathericon{
+    padding : 100px 0px 0px 10px;
+}
+.temperature_total{
+    display: flex;
+}
+.temperature{
+    padding : 0 0 0 13px;
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-size : 40px;
+}
+.metric{
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-size: 30px;
+    padding : 10px 0 0 0px;
+}
+.weatherinfo{
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-size : 20px;
+    padding-left : 20px
+}
+
+.nowtime{
+    font-family: 'NPSfontBold';
+    padding : 20px 0 0 105px;
+    font-size: 45px;
+    color: white;
+}
+.feeltemp{
+    display : flex;
+    font-family: 'NPSfontBold';
+    padding : 20px 0 0 70px;
+    font-size: 20px;
+    color: white;
+}
+.feeltempresult{
+    padding-left : 63px;
+}
+.sunrise{
+    display : flex;
+    font-family: 'NPSfontBold';
+    padding : 20px 0 0 70px;
+    font-size: 20px;
+    color: white;
+}
+.sunriseresult{
+    padding-left : 104px;
+}
+.changelocation{
+    position : absolute;
+    bottom: 30px;
+    padding-left: 115px;
+}
+.changelocationbutton{
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.changelocationbutton:hover{
+    background-color: #D6D6D6;
+    cursor : pointer;
+}
+
+.changelocation_view{
+    display: block;
+    position: absolute;
+    z-index: 3;
+    background-color: #2A373F;
+    height: 500px;
+    width: 700px;
+    opacity: 95%;
+    border-radius: 20px;
+}
+.closeview{
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top : 20px;
+}
+.closeview:hover{
+    cursor: pointer;
+}
+
+.searchingBar{
+    display: flex;
+    position: absolute;
+    left: 30px;
+    top : 20px;
+}
+
+.textbox{
+    font-size : 17px;
+    color: white;
+    font-family: 'NPSfontBold';
+    width: 450px;
+    margin-left: 40px;
+    margin-bottom: 3px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 3px;
+    border-color: #FFFFFF;
+    background-color: inherit;
+
+}
+.textbox:focus{
+    outline: none;
+    caret-color: white;
+    
+}
+
+.enter{
+    position: absolute;
+    right: 145px;
+    top : 20px;
+    
+}

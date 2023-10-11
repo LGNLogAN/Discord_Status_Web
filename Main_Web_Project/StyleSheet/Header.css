@@ -1,0 +1,73 @@
+.navbar{ 
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #161B22;
+    padding: 10px 15px;
+}
+.navbar_logo{ /* 로고 */
+    font-size : 50px;
+    padding-left : 10px;
+}
+.navbar_menu{
+    display : flex;
+    list-style : none;
+    padding-left : 0px;
+}
+.navbar_menu li{
+    padding : 8px 20px;
+}
+.navbar_icons{
+    list-style: none;
+    display: flex;
+    padding-left : 0px;
+}
+.navbar_icons li{
+    padding : 8px 6px;
+}
+.navbar_menu li:hover{
+    background-color: #2A373F;
+    border-radius: 4px;
+}
+.navbar_bar{
+    display:none;
+    position: absolute;
+    right:32px;
+    font-size: 20px;
+}
+
+@media screen and (max-width : 768px){
+    .navbar_bar{
+        display: block;
+        padding: 17px 3px;
+    }
+    .navbar{
+        flex-direction: column;
+        padding : 8px 35px;
+    }
+    .navbar_logo{
+        padding-left:0px;
+    }
+    .navbar_menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar_menu li{
+        width : 100%;
+        text-align: center;
+    }
+    .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cardtotal{
+        display: none;
+    }
+    .navbar_icons.active , .navbar_menu.active {
+        display : flex;
+    }
+}
