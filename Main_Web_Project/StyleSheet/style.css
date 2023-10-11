@@ -1,0 +1,345 @@
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NPSfontBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    margin:0;
+    background-color : #142531;
+    font-family: 'Karla', sans-serif;
+    height: 5000px;
+}
+a{
+    text-decoration: none;
+    color : white;
+}
+h1{
+    text-align: center; color: white; 
+    font-size: 40px;
+}
+.weathertotal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+.weatherbox{
+    width: 300px; height: 400px;
+    background-image: url('../img/sky.jpg');
+    background-size: auto;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.temperature{
+    display: flex;
+}
+
+.weathersidebox{
+    position: absolute;
+    width: 300px;
+    height: 360px;
+    border-radius: 15px;
+    background: #191D24;
+    transition: all 1s;
+    /* transform: translateX(240px); */
+    transform: translateX(25px);
+}
+
+.weathersidebox:hover{
+    transform: translateX(260px);
+}
+
+.dayoftheweek{
+    padding : 25px  20px  10px  20px; /*(top), 오른쪽(right), 하단(bottom), 왼쪽(left) */
+    font-family: 'NPSfontBold';
+    color : white;
+    font-weight: bold;
+    font-size : 35px;
+}
+.yearmonthday{
+    padding-left : 20px;
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-weight: bold;
+    font-size : 23px;
+    padding-bottom: 4px;
+}
+.map_pin{
+    padding-left: 15px;
+    display: flex;
+}
+.location{
+    padding-top : 2px;
+    padding-left : 5px;
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-weight: bold;
+    font-size : 20px;
+}
+
+.weathericon{
+    padding : 100px 0px 0px 10px;
+}
+.temperature_total{
+    display: flex;
+}
+.temperature{
+    padding : 0 0 0 13px;
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-size : 40px;
+}
+.metric{
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-size: 30px;
+    padding : 10px 0 0 0px;
+}
+.weatherinfo{
+    font-family: 'SOYOMapleBoldTTF';
+    color : white;
+    font-size : 20px;
+    padding-left : 20px
+}
+
+.nowtime{
+    font-family: 'NPSfontBold';
+    padding : 20px 0 0 105px;
+    font-size: 45px;
+    color: white;
+}
+.feeltemp{
+    display : flex;
+    font-family: 'NPSfontBold';
+    padding : 20px 0 0 70px;
+    font-size: 20px;
+    color: white;
+}
+.feeltempresult{
+    padding-left : 63px;
+}
+.sunrise{
+    display : flex;
+    font-family: 'NPSfontBold';
+    padding : 20px 0 0 70px;
+    font-size: 20px;
+    color: white;
+}
+.sunriseresult{
+    padding-left : 104px;
+}
+.changelocation{
+    position : absolute;
+    bottom: 30px;
+    padding-left: 115px;
+}
+.changelocationbutton{
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.changelocationbutton:hover{
+    background-color: #D6D6D6;
+    cursor : pointer;
+}
+
+.changelocation_view{
+    display: none;
+    position: absolute;
+    z-index: 3;
+    background-color: #2A373F;
+    height: 500px;
+    width: 700px;
+    opacity: 95%;
+    border-radius: 20px;
+}
+.closeview{
+    /* background-color: transparent;
+    border: none; */
+    display: flex;
+    position: absolute;
+    right: 30px;
+    top : 20px;
+}
+.closeview:hover{
+    cursor: pointer;
+}
+
+
+.section_main{
+    color : white;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'NanumSquare';
+    opacity: 0%;
+    transition: 2.5s;
+}
+
+.section_text{
+    color: white;
+    font-family: 'NanumSquare';
+}
+
+.subtitle{
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.line{
+    width: 0cm;
+    transition: all 1s;
+}
+.card_1{
+    display: block;
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #011522;
+    border-radius: 8px;
+    z-index: 1;
+    opacity: 1;
+    transition: all 3s;
+}
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+.circle {
+    padding: 0 4px;
+}
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+.red {
+    background-color: #ff605c;
+}
+.yellow {
+    background-color: #ffbd44;
+}
+.green {
+    background-color: #00ca4e;
+}
+
+pre {
+    padding-left: 50px;
+}
+.javacode{
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+   
+.card_content_text{
+    color: white;
+}
+
+.javacodingBox_result{
+    color : white;
+    font-family: 'NanumSquare';
+    text-align: center;
+    font-size: 100px;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1.5s;
+}
+.navbar{ 
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #161B22;
+    padding: 10px 15px;
+}
+.navbar_logo{ /* 로고 */
+    font-size : 50px;
+    padding-left : 10px;
+}
+.navbar_menu{
+    display : flex;
+    list-style : none;
+    padding-left : 0px;
+}
+.navbar_menu li{
+    padding : 8px 20px;
+}
+.navbar_icons{
+    list-style: none;
+    display: flex;
+    padding-left : 0px;
+}
+.navbar_icons li{
+    padding : 8px 6px;
+}
+.navbar_menu li:hover{
+    background-color: #2A373F;
+    border-radius: 4px;
+}
+.navbar_bar{
+    display:none;
+    position: absolute;
+    right:32px;
+    font-size: 20px;
+}
+.textanimation{
+    text-align: center;
+    color : white;
+}
+
+@media screen and (max-width : 768px){
+    .navbar_bar{
+        display: block;
+        padding: 17px 3px;
+    }
+    .navbar{
+        flex-direction: column;
+        padding : 8px 35px;
+    }
+    .navbar_logo{
+        padding-left:0px;
+    }
+    .navbar_menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar_menu li{
+        width : 100%;
+        text-align: center;
+    }
+    .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cardtotal{
+        display: none;
+    }
+    .navbar_icons.active , .navbar_menu.active {
+        display : flex;
+    }
+}
