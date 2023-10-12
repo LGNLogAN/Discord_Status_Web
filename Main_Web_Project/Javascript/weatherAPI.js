@@ -1,5 +1,11 @@
 const API_KEY = '481b307882ce8a4efb0cf18ecb73f6dd';
-var city = 'Seoul';
+
+function change(){
+    city = document.getElementById('textbox').value;
+    return city;
+}
+var city2 = change();
+var city = city2;
 const WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 const date = new Date();
 
@@ -18,8 +24,9 @@ function dayOfTheWeek(){
 function cityKorea(getCity){
     if(getCity=="Seoul"){
         getCity = "서울";
+    }else if(getCity=="Busan"){
+        getCity = "부산";
     }
-
     return getCity;
 }
 
@@ -56,6 +63,7 @@ function getTime() {
     return Nowtime;
 }
 
+
 function updateWeather(){
     fetch(WeatherAPI).then(
         (response)=>{ 
@@ -73,14 +81,18 @@ function updateWeather(){
     })
 }
 
+
 updateWeather();
 setInterval(updateWeather, 1000);
 
 
+function changeLocation(){
+    document.querySelector(".changelocation_view").style.display = "block";
+}
 
-
-
-
+function closeView(){
+    document.querySelector(".changelocation_view").style.display = "none";
+}
 
 
 // API를 통해 json 형식의 데이터를 받고 res 라는 매개변수에 저장하는데 res.json() 이 코드에서 json()이 함수를 통해 res 를 json
