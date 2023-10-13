@@ -4,14 +4,29 @@
     align-items: center;
     padding-top: 100px;
 }
-.weatherbox{
-    width: 300px; height: 400px;
-    background-image: url('../img/sky.jpg');
-    background-size: auto;
+.weatherbox {
+    width: 300px;
+    height: 400px;
+    background-size: cover;
     border-radius: 15px;
     z-index: 1;
 }
 
+.weatherbox.clouds {
+    background-image: url('../img/clouds.jpg');
+}
+
+.weatherbox.clear {
+    background-image: url('../img/clear.jpg');
+}
+
+.weatherbox.rain {
+    background-image: url('../img/rain.jpg');
+}
+
+.weatherbox.snow {
+    background-image: url('../img/snow.jpg');
+}
 .temperature{
     display: flex;
 }
@@ -22,12 +37,12 @@
     border-radius: 15px;
     background: #292f38;
     transition: all 1s;
-    /* transform: translateX(260px); */
-    transform: translateX(25px);
+    transform: translateX(26px);
+    /* transform: translateX(25px); */
 }
 
 .weathersidebox:hover{
-    transform: translateX(260px);
+    transform: translateX(260px) !important;
 }
 
 .dayoftheweek{
@@ -129,92 +144,80 @@
 }
 
 .changelocation_view{
-    display: block;
     position: absolute;
-    z-index: 3;
-    background-color: #2A373F;
-    height: 90px;
-    width: 700px;
-    opacity: 1;
+    background-color: #292f38;
+    width: 300px;
+    height: 360px;
+    transition: all 1s;
+    transform: translateX(-26px);
     border-radius: 20px;
 }
-.closeview{
-    display: flex;
-    position: absolute;
-    right: 30px;
-    top : 20px;
-}
-.closeview:hover{
-    cursor: pointer;
-}
 
-.searchingBar{
-    display: flex;
-    position: absolute;
-    left: 30px;
-    top : 20px;
+.changelocation_view:hover{
+    transform: translateX(-260px);
 }
-
-.textbox{
-    font-size : 17px;
-    color: white;
-    font-family: 'NPSfontBold';
-    width: 400px;
-    margin-left: 60px;
-    margin-bottom: 3px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-width: 3px;
-    border-color: #FFFFFF;
-    background-color: inherit;
-
-}
-.textbox:focus{
-    outline: none;
-    caret-color: white;
-    
-}
-
-.enter{
-    position: absolute;
-    right: 145px;
-    top : 20px;
-    
-}
-
-.locationlist {
-    display: flex;
-    margin : 70px 0 0 40px;
-}
-
-.locationlist li{
-    list-style: none;
-    font-size: 15px;
-    font-family: 'NPSfontBold';
+.citylist{
+    padding-left :20px;
+    font-size: 25px;
     color : #FFFFFF;
-    margin-top : 10px;
-    padding-top: 10px;
+    font-family: 'NPSfontBold';
 }
 
-.listLine{
-    width: 500px;
-    margin-top: 3px;
-    color : #808080;
-}
-.submitButton{
-    position: absolute;
-    bottom : 30px;
-    right : 30px;
-}
-.realSubmitButton{
+.cssbuttons-io-button {
+    background:  #1F2937;
+    color: white;
+    font-family: inherit;
+    
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 0.9em;
     border: none;
-    border-radius: 10px;
-    width: 60px;
-    height: 30px;
-    font-size: 13px;
-    font-weight: bold;
-}
-
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em  #1F2937;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    width : 220px;
+    padding-right: 3.3em;
+    margin-top :17px;
+  }
+  
+  .cssbuttons-io-button .icon {
+    cursor: pointer;
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em  #1F2937;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+  
+  .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+  }
+  
+  .cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  
+  .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+  }
 
   

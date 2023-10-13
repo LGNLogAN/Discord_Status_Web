@@ -1,13 +1,33 @@
 const API_KEY = '481b307882ce8a4efb0cf18ecb73f6dd';
-
-function change(){
-    city = document.getElementById('textbox').value;
-    return city;
+var city = 'Seoul';
+var WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+function change(cityValue) {
+    city = cityValue;
+    WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    updateWeather();
 }
-var city2 = change();
-var city = city2;
-const WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
 const date = new Date();
+
+let isLock = false;
+
+function lock() {
+    const weathersidebox = document.querySelector(".weathersidebox");
+    const changelocationbutton = document.querySelector(".changelocationbutton");
+
+    if (!isLock) {
+        weathersidebox.style.transition = "transform 1s";
+        weathersidebox.style.transform = "translateX(260px)";
+        changelocationbutton.innerHTML = "고정 해제";
+        isLock = true;
+    } else {
+        weathersidebox.style.transition = "transform 1s";
+        weathersidebox.style.transform = "translateX(26px)";
+        changelocationbutton.innerHTML = "고정";
+        isLock = false;
+    }
+}
+
 
 function dayOfTheWeek(){
     Day = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
@@ -22,12 +42,16 @@ function dayOfTheWeek(){
 }
 
 function cityKorea(getCity){
-    if(getCity=="Seoul"){
-        getCity = "서울";
-    }else if(getCity=="Busan"){
-        getCity = "부산";
+    korean = ["서울","부산","제주","인천","오사카","런던","러시아"];
+    eng = ["Seoul" , "Busan" , "Jeju City" , "Incheon" , "Osaka" , "London" , "Russia"];
+    for(i=0; i<7; i++){
+        if(getCity==eng[i]){
+            getCity = korean[i];
+        }
     }
     return getCity;
+
+
 }
 
 function weatherInfo(EngWeatherInfo){
@@ -62,7 +86,27 @@ function getTime() {
     let Nowtime = `${hours} : ${minutes}`;
     return Nowtime;
 }
+function weatherJPG() {
+    fetch(WeatherAPI)
+        .then((response) => response.json())
+        .then((json) => {
+            // const weatherMain = "Clear";
+            const weatherMain = json.weather[0].main;
+            const weatherBox = document.querySelector(".weatherbox");
 
+            weatherBox.classList.remove('clouds', 'clear', 'rain', 'snow');
+
+            if (weatherMain === "Clouds") {
+                weatherBox.classList.add('clouds');
+            } else if (weatherMain === "Clear") {
+                weatherBox.classList.add('clear');
+            } else if (weatherMain === "Rain") {
+                weatherBox.classList.add('rain');
+            } else if (weatherMain === "Snow") {
+                weatherBox.classList.add('snow');
+            }
+        });
+}
 
 function updateWeather(){
     fetch(WeatherAPI).then(
@@ -70,29 +114,21 @@ function updateWeather(){
             return response.json(); 
     })
     .then(json =>{
+        weatherJPG();
+        document.querySelector(".location").innerHTML = cityKorea(json.name);
         document.getElementById('time').innerText = getTime();
         document.querySelector(".yearmonthday").innerHTML = getDate();
         document.querySelector(".dayoftheweek").innerHTML = dayOfTheWeek();
-        document.querySelector(".location").innerHTML = cityKorea(json.name);
         document.getElementById("temperature").innerHTML = Math.floor(json.main.temp);
         document.querySelector(".weatherinfo").innerHTML = weatherInfo(json.weather[0].main);
         document.querySelector(".feeltempresult").innerHTML = json.main.feels_like.toFixed(1) + "℃";
         document.querySelector(".sunriseresult").innerHTML = sunriseUnixTime(json.sys.sunrise);
+       
     })
 }
 
-
 updateWeather();
 setInterval(updateWeather, 1000);
-
-
-function changeLocation(){
-    document.querySelector(".changelocation_view").style.display = "block";
-}
-
-function closeView(){
-    document.querySelector(".changelocation_view").style.display = "none";
-}
 
 
 // API를 통해 json 형식의 데이터를 받고 res 라는 매개변수에 저장하는데 res.json() 이 코드에서 json()이 함수를 통해 res 를 json

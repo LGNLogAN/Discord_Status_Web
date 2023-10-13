@@ -65,43 +65,53 @@
 </nav>
 
 <section>
-    <h1 class="dkssud" style="color: white;"></h1>
     <div class="weathertotal">
+
         <div class="changelocation_view" id="changelocation_view">
-            <div class="searchingIcon"></div>
-            <div class="searchingBar">
-                <svg width="35" height="35" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m21 21-6-6m2-5a7.001 7.001 0 0 1-11.95 4.95A7 7 0 1 1 17 10Z"></path>
-                </svg>
-                <input type="text" name="citySeach" class="textbox" id="textbox" value="as">
-            </div>
+            <div class="citylist">
+                <button class="cssbuttons-io-button" onclick="change('Seoul');"> 서울
+                    <div class="icon">
+                        <svg width="25" height="25" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6 19.5H21v2h-6v-6h2v2.73c1.83-1.47 3-3.71 3-6.23 0-4.07-3.06-7.44-7-7.93V2.05c5.05.5 9 4.76 9 9.95 0 2.99-1.32 5.67-3.4 7.5ZM4 12c0-2.52 1.17-4.77 3-6.23V8.5h2v-6H3v2h2.4A9.966 9.966 0 0 0 2 12c0 5.19 3.95 9.45 9 9.95v-2.02c-3.94-.49-7-3.86-7-7.93Zm12.24-3.89-5.66 5.66-2.83-2.83-1.41 1.41 4.24 4.24 7.07-7.07-1.41-1.41Z"></path>
+                        </svg>                  
+                    </div>
+                  </button>
 
-            <div class="enter">
-                <a href="#" onclick="return change();">
-                    <svg width="25" height="25" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m5.25 16.5-3-3 3-3"></path>
-                        <path d="M3 13.5h13.781c2.755 0 4.969-2.312 4.969-5.063V7.5"></path>
-                    </svg>
-                 </a>
-            </div>
-            
-            <div class="close">
-                <a href="#" class="closeview" onclick="return closeView();">
-                    <svg width="35" height="35" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M5.152 5.152a1.2 1.2 0 0 1 1.696 0L12 10.303l5.152-5.151a1.2 1.2 0 1 1 1.696 1.696L13.697 12l5.151 5.152a1.2 1.2 0 0 1-1.696 1.696L12 13.697l-5.152 5.151a1.2 1.2 0 0 1-1.696-1.696L10.303 12 5.152 6.848a1.2 1.2 0 0 1 0-1.696Z" clip-rule="evenodd"></path>
-                    </svg> 
-                </a>
-            </div>
-            
-    
+                  <button class="cssbuttons-io-button" onclick="change('Busan');"> 부산
+                    <div class="icon">
+                        <svg width="25" height="25" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6 19.5H21v2h-6v-6h2v2.73c1.83-1.47 3-3.71 3-6.23 0-4.07-3.06-7.44-7-7.93V2.05c5.05.5 9 4.76 9 9.95 0 2.99-1.32 5.67-3.4 7.5ZM4 12c0-2.52 1.17-4.77 3-6.23V8.5h2v-6H3v2h2.4A9.966 9.966 0 0 0 2 12c0 5.19 3.95 9.45 9 9.95v-2.02c-3.94-.49-7-3.86-7-7.93Zm12.24-3.89-5.66 5.66-2.83-2.83-1.41 1.41 4.24 4.24 7.07-7.07-1.41-1.41Z"></path>
+                        </svg>
+                    </div>
+                  </button>
 
-            
-            <!-- <div class="submitButton">
-                <a href="#" onclick="return changeLocation()">
-                    <button class="realSubmitButton">저장</button>
-                </a>
-            </div> -->
+                  <button class="cssbuttons-io-button" onclick="change('Jeju');"> 제주
+                    <div class="icon">
+                        <svg width="25" height="25" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6 19.5H21v2h-6v-6h2v2.73c1.83-1.47 3-3.71 3-6.23 0-4.07-3.06-7.44-7-7.93V2.05c5.05.5 9 4.76 9 9.95 0 2.99-1.32 5.67-3.4 7.5ZM4 12c0-2.52 1.17-4.77 3-6.23V8.5h2v-6H3v2h2.4A9.966 9.966 0 0 0 2 12c0 5.19 3.95 9.45 9 9.95v-2.02c-3.94-.49-7-3.86-7-7.93Zm12.24-3.89-5.66 5.66-2.83-2.83-1.41 1.41 4.24 4.24 7.07-7.07-1.41-1.41Z"></path>
+                        </svg>
+                    </div>
+                  </button>
+
+                  <button class="cssbuttons-io-button" onclick="change('London');"> 런던
+                    <div class="icon">
+                        <svg width="25" height="25" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6 19.5H21v2h-6v-6h2v2.73c1.83-1.47 3-3.71 3-6.23 0-4.07-3.06-7.44-7-7.93V2.05c5.05.5 9 4.76 9 9.95 0 2.99-1.32 5.67-3.4 7.5ZM4 12c0-2.52 1.17-4.77 3-6.23V8.5h2v-6H3v2h2.4A9.966 9.966 0 0 0 2 12c0 5.19 3.95 9.45 9 9.95v-2.02c-3.94-.49-7-3.86-7-7.93Zm12.24-3.89-5.66 5.66-2.83-2.83-1.41 1.41 4.24 4.24 7.07-7.07-1.41-1.41Z"></path>
+                        </svg>
+                    </div>
+                  </button>
+
+                  <button class="cssbuttons-io-button" onclick="change('Russia');"> 러시아
+                    <div class="icon">
+                        <svg width="25" height="25" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6 19.5H21v2h-6v-6h2v2.73c1.83-1.47 3-3.71 3-6.23 0-4.07-3.06-7.44-7-7.93V2.05c5.05.5 9 4.76 9 9.95 0 2.99-1.32 5.67-3.4 7.5ZM4 12c0-2.52 1.17-4.77 3-6.23V8.5h2v-6H3v2h2.4A9.966 9.966 0 0 0 2 12c0 5.19 3.95 9.45 9 9.95v-2.02c-3.94-.49-7-3.86-7-7.93Zm12.24-3.89-5.66 5.66-2.83-2.83-1.41 1.41 4.24 4.24 7.07-7.07-1.41-1.41Z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
         </div>
+
+
         <div class="weatherbox">
             <div class="dayoftheweek"></div>
             <div class="yearmonthday"></div>
@@ -140,7 +150,7 @@
                 <div class="sunriseresult"></div>
             </div>
             <div class="changelocation">
-                <button class="changelocationbutton" onclick="return changeLocation();">지역 변경</button>
+                <button class="changelocationbutton" onclick="return lock2();">고정</button>
             </div>
         </div>
     </div>
