@@ -1,4 +1,4 @@
-const API_KEY = '481b307882ce8a4efb0cf18ecb73f6dd';
+const API_KEY = '';
 var city = 'Seoul';
 var WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 function change(cityValue) {
