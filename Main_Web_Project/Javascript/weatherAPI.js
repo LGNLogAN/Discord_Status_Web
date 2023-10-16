@@ -1,15 +1,16 @@
-const API_KEY = '';
-var city = 'Seoul';
-var WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+const API_KEY = '481b307882ce8a4efb0cf18ecb73f6dd';
+const UpdateTime = 60000;
+let isLock = false;
+
 function change(cityValue) {
     city = cityValue;
     WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     updateWeather();
 }
-
+var city = 'Seoul';
+var WeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 const date = new Date();
 
-let isLock = false;
 
 function lock() {
     const weathersidebox = document.querySelector(".weathersidebox");
@@ -27,8 +28,6 @@ function lock() {
         isLock = false;
     }
 }
-
-
 function dayOfTheWeek(){
     Day = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
     let getDayOfTheWeek = date.getDay();
@@ -40,7 +39,6 @@ function dayOfTheWeek(){
     }
     return getDayOfTheWeek;
 }
-
 function cityKorea(getCity){
     korean = ["서울","부산","제주","인천","오사카","런던","러시아"];
     eng = ["Seoul" , "Busan" , "Jeju City" , "Incheon" , "Osaka" , "London" , "Russia"];
@@ -53,17 +51,24 @@ function cityKorea(getCity){
 
 
 }
-
 function weatherInfo(EngWeatherInfo){
-    if(EngWeatherInfo=="Clouds"){
-        EngWeatherInfo = "흐림";
-    }else if(EngWeatherInfo=="Clear"){
-        EngWeatherInfo = "맑음";
+    let korWeatherInfo;
+    let weatherEng = ['Clouds' , 'Clear' , 'Rain' , 'Snow' , 'Fog'];
+    let weatherKor = ['흐림' , '맑음' , '비' , '눈' , '안개'];
+
+    if(weatherEng.includes(EngWeatherInfo)){
+        for(i=0; i<weatherEng.length; i++){
+            if(weatherEng[i]==EngWeatherInfo){
+                korWeatherInfo = weatherKor[i];
+                return korWeatherInfo;
+            }
+        }
+    }else{
+        korWeatherInfo = "지원하지않는 날씨";
+        return korWeatherInfo;
     }
 
-    return EngWeatherInfo;
 }
-
 function sunriseUnixTime(SunriseUnix){
     const sunriseDate = new Date(SunriseUnix * 1000);
     const sunriseHours = sunriseDate.getHours().toString().padStart(2, '0');
@@ -72,12 +77,10 @@ function sunriseUnixTime(SunriseUnix){
 
     return sunrise;
 }
-
 function getDate(){
     var todayDate = `${ date.getFullYear() }년 ${ date.getMonth() + 1 }월 ${ date.getDate() }일`
     return todayDate;
 }
-
 function getTime() {
     const hours = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
@@ -86,26 +89,18 @@ function getTime() {
     let Nowtime = `${hours} : ${minutes}`;
     return Nowtime;
 }
-function weatherJPG() {
-    fetch(WeatherAPI)
-        .then((response) => response.json())
-        .then((json) => {
-            // const weatherMain = "Clear";
-            const weatherMain = json.weather[0].main;
-            const weatherBox = document.querySelector(".weatherbox");
 
-            weatherBox.classList.remove('clouds', 'clear', 'rain', 'snow');
+function weatherJPG(weatherinfo){
+    let weatherKind = ['clouds' , 'clear' , 'rain' , 'snow'];
+    const weatherBox = document.querySelector(".weatherbox");
+    weatherBox.classList.remove('clouds', 'clear', 'rain', 'snow');
+    let lowerWeatherinfo = weatherinfo.toLowerCase();
 
-            if (weatherMain === "Clouds") {
-                weatherBox.classList.add('clouds');
-            } else if (weatherMain === "Clear") {
-                weatherBox.classList.add('clear');
-            } else if (weatherMain === "Rain") {
-                weatherBox.classList.add('rain');
-            } else if (weatherMain === "Snow") {
-                weatherBox.classList.add('snow');
-            }
-        });
+    if(weatherKind.includes(lowerWeatherinfo)){
+        weatherBox.classList.add(lowerWeatherinfo);
+    }else{
+        weatherBox.classList.add('default');
+    }
 }
 
 function updateWeather(){
@@ -114,7 +109,7 @@ function updateWeather(){
             return response.json(); 
     })
     .then(json =>{
-        weatherJPG();
+        weatherJPG(json.weather[0].main);
         document.querySelector(".location").innerHTML = cityKorea(json.name);
         document.getElementById('time').innerText = getTime();
         document.querySelector(".yearmonthday").innerHTML = getDate();
@@ -128,7 +123,7 @@ function updateWeather(){
 }
 
 updateWeather();
-setInterval(updateWeather, 1000);
+setInterval(updateWeather, UpdateTime);
 
 
 // API를 통해 json 형식의 데이터를 받고 res 라는 매개변수에 저장하는데 res.json() 이 코드에서 json()이 함수를 통해 res 를 json

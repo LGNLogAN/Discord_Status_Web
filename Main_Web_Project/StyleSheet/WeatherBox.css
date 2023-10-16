@@ -27,6 +27,9 @@
 .weatherbox.snow {
     background-image: url('../img/snow.jpg');
 }
+.weatherbox.default {
+    background-image: url('../img/default.jpg');
+}
 .temperature{
     display: flex;
 }
