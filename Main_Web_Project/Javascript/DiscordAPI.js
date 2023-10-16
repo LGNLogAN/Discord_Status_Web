@@ -2,7 +2,7 @@ const { Client, Events, GatewayIntentBits } = require('discord.js');
 // const { token, channelId } = require(''); json 형식에 토큰이랑 채널ID 동시에 받기 가능
 const { token } = require('../JSON_File/config.json');
 const fs = require('fs');
-const filePath = './JSON_File/channelInfo';
+const filePath = './Main_Web_Project/JSON_File/channelInfo.json';
 
 function start(){
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });

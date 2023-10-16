@@ -19,6 +19,20 @@
       "discriminator": "8334",
       "avatar": null,
       "nickname": null
+    },
+    {
+      "id": "721855004004188200",
+      "username": "kimxx",
+      "discriminator": "0596",
+      "avatar": null,
+      "nickname": "태현"
+    },
+    {
+      "id": "750260319976292435",
+      "username": "RR서할게",
+      "discriminator": "1668",
+      "avatar": "https://cdn.discordapp.com/avatars/750260319976292435/64333deca77ad974c41db939de05cdc4.webp",
+      "nickname": "조민준"
     }
   ]
 }
