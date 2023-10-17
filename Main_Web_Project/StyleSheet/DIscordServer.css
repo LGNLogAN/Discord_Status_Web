@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap');
+
+.cardTotal{
+    padding: 50px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 1300px;
+    height: 700px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-color: #303339;
+}
+
+.card__content {
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+}
+.cardheader{
+    display: flex;
+}
+.cardbody{
+    display : flex;
+    border: 2px;
+    border-color: white;
+}
+.card_text{
+    color : white;
+    font-size: 30px;
+    padding : 17px 0 0 0px;
+    font-family : 'Nanum Gothic';
+    font-weight: bold;
+}
+
+.VoiceChannel_1 , .VoiceChannel_2 , .VoiceChannel_3 , .VoiceChannel_4{
+    border-radius: 20px;
+    width: 300px;
+    height: 400px;
+    background-color : #3C3F44;
+    margin-top : 30px;
+    margin-right: 15px;
+    margin-left : 15px;
+}
+.hr1{
+   position: absolute;
+   border-width: 1px;
+   left:135.3px;
+   width: 1307px;
+
+}
+.DiscordServerIMG{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding : 10px 20px;
+}
+
+.ChannelTitle{
+    text-align: center;
+    font-size: 25px;
+    color : white;
+    font-family : 'Nanum Gothic';
+    font-weight: bold;
+    padding: 10px 10px;
+}

@@ -3,16 +3,20 @@ const { Client, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('../JSON_File/config.json');
 const fs = require('fs');
 const filePath = './Main_Web_Project/JSON_File/channelInfo.json';
+const FirstVoiceChannel = '697642680292868112';
+const SecondVoiceChannel = '714629856691748895';
+const ThirdVoiceChannel = '842404940416679966';
+const FourthVoiceChannel = '842405026265301012';
 
-function start(){
+function start(){ 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });
     client.once(Events.ClientReady, () => {
-        console.log(`Ready! Logged in as ${client.user.tag}`);
+        const date = new Date();
 
-        const guild = client.guilds.cache.first(); 
+        console.log(`프로그램 실행이 완료되었습니다.\n활성화 봇 : ${client.user.tag}\n실행 시각 : ` , date);
+        const guild = client.guilds.cache.first();
         if (guild) {
-            const channel = guild.channels.cache.get('697642680292868112');
-
+            const channel = guild.channels.cache.get(FirstVoiceChannel);
             if (channel) {
                 if (channel.type === 2) { 
                     const channelInfo = {
@@ -30,22 +34,19 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
                             nickname: member.nickname
                         }))
                     };
-
-                    // console.log('Users in Channel:', channelInfo.members);
                     var channelInfoJson = JSON.stringify(channelInfo, null, 2);
-                    console.log('Users in Channel JSON:', channelInfoJson);
+                    console.log('Discord Information :\n', channelInfoJson);
                     fs.writeFileSync(filePath, channelInfoJson); 
                 } else {
-                    console.error('The channel is not a voice channel.');
+                    console.error('이 채널은 음성채팅방이 아닙니다');
                 }
             } else {
-                console.error('Channel not found.');
+                console.error('채널을 찾을 수 없습니다.');
             }
         } else {
-            console.error('Guild not found.');
+            console.error('서버를 찾을 수 없습니다.');
         }
     });
-
     client.login(token);
 }
 
