@@ -84,7 +84,7 @@ function getDate(){
 function getTime() {
     const hours = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
-    // const seconds = date.getSeconds().toString().padStart(2, '0'); 초(Second)를 구하는 코드
+    const seconds = date.getSeconds().toString().padStart(2, '0'); // 초(Second)를 구하는 코드
 
     let Nowtime = `${hours} : ${minutes}`;
     return Nowtime;
@@ -124,7 +124,6 @@ function updateWeather(){
 
 updateWeather();
 setInterval(updateWeather, UpdateTime);
-
 
 // API를 통해 json 형식의 데이터를 받고 res 라는 매개변수에 저장하는데 res.json() 이 코드에서 json()이 함수를 통해 res 를 json
 // 형식으로 변환해서 res 매개변수에 API 를 통해 받은 json형식의 파일을 저장한다.
