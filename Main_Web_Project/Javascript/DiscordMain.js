@@ -17,6 +17,7 @@ function aa() {
             newDiv.append(json[0].members[i].username);
             // 그 자식태그 안에 div(디스코드 닉네임)을 넣어줌
         }
+
         for (i = 0; i < json[1].members.length; i++){
             const newTotalDiv = document.createElement('div');
             document.querySelector(".voiceChannel_2_members").appendChild(newTotalDiv)
@@ -30,6 +31,7 @@ function aa() {
             newDiv.append(json[1].members[i].username);
             // 그 자식태그 안에 div(디스코드 닉네임)을 넣어줌
         }
+
         for (i = 0; i < json[2].members.length; i++){
             const newTotalDiv = document.createElement('div');
             document.querySelector(".voiceChannel_3_members").appendChild(newTotalDiv)
@@ -43,6 +45,7 @@ function aa() {
             newDiv.append(json[2].members[i].username);
             // 그 자식태그 안에 div(디스코드 닉네임)을 넣어줌
         }
+
         for (i = 0; i < json[3].members.length; i++){
             const newTotalDiv = document.createElement('div');
             document.querySelector(".voiceChannel_4_members").appendChild(newTotalDiv)
@@ -57,11 +60,6 @@ function aa() {
             // 그 자식태그 안에 div(디스코드 닉네임)을 넣어줌
         }
         
-        
-
-
-
-
 
     }); 
 }
