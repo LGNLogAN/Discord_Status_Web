@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Noto+Sans+KR:wght@100;300&display=swap');
 
 .cardTotal{
     padding: 50px;
@@ -11,7 +12,6 @@
     height: 700px;
     border-radius: 20px;
     padding: 5px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     background-color: #303339;
 }
 
@@ -23,6 +23,25 @@
 .cardheader{
     display: flex;
 }
+.DiscordInviteLink{
+    margin-left : 880px;
+    padding-top : 10px;
+}
+.DiscordInviteButton{
+    background-color: #248046;
+    color: white;
+    width: 160px;
+    height: 55px;
+    font-size: 18px;
+    font-family: 'NPSfontBold';
+    border: none;
+    border-radius: 10px;
+}
+
+.DiscordInviteButton:hover{
+    cursor: pointer;
+    background-color: #1A6334;
+}
 .cardbody{
     display : flex;
     border: 2px;
@@ -32,8 +51,7 @@
     color : white;
     font-size: 30px;
     padding : 17px 0 0 0px;
-    font-family : 'Nanum Gothic';
-    font-weight: bold;
+    font-family: 'SOYOMapleBoldTTF';
 }
 
 .VoiceChannel_1 , .VoiceChannel_2 , .VoiceChannel_3 , .VoiceChannel_4{
@@ -51,23 +69,6 @@
     height: 50px;
     padding : 10px 20px;
 }
-/*  */
-.members div{
-    display: flex;
-    color : white;
-    padding : 5px;
-}
-
-.members div div{ /* members 안에 div 안에 div 태그 지정 */
-    padding : 5px 0 0 5px;
-}
-.members img{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-
-}
-/*  */
 .ChannelTitle{
     text-align: center;
     font-size: 25px;
@@ -76,3 +77,70 @@
     font-weight: bold;
     padding: 10px 10px;
 }
+
+
+
+
+/*  */
+.voiceChannel_1_members div{
+    display: flex;
+    color : white;
+    padding : 5px 0 0 20px;
+}
+.voiceChannel_1_members div div{ /* members 안에 div 안에 div 태그 지정 */
+    padding : 5px 0 0 5px;
+}
+.voiceChannel_1_members img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+/*  */
+
+/*  */
+.voiceChannel_2_members div{
+    display: flex;
+    color : white;
+    padding : 5px 0 0 20px;
+}
+.voiceChannel_2_members div div{ /* members 안에 div 안에 div 태그 지정 */
+    padding : 5px 0 0 5px;
+}
+.voiceChannel_2_members img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+/*  */
+
+/*  */
+.voiceChannel_3_members div{
+    display: flex;
+    color : white;
+    padding : 5px 0 0 20px;
+}
+.voiceChannel_3_members div div{ /* members 안에 div 안에 div 태그 지정 */
+    padding : 5px 0 0 5px;
+}
+.voiceChannel_3_members img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+/*  */
+
+/*  */
+.voiceChannel_4_members div{
+    display: flex;
+    color : white;
+    padding : 5px 0 0 20px;
+}
+.voiceChannel_4_members div div{ /* members 안에 div 안에 div 태그 지정 */
+    padding : 5px 0 0 5px;
+}
+.voiceChannel_4_members img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+/*  */

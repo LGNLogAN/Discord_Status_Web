@@ -1,17 +1,46 @@
-{
-  "id": "697642680292868112",
-  "name": "🔊｜음성 통화방 [ 1 부 ]",
-  "type": 2,
-  "guildId": "697642680292868108",
-  "guildName": "만남의 광장",
-  "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
-  "members": [
-    {
-      "id": "332474982846431232",
-      "username": "mubin_c",
-      "discriminator": "0",
-      "avatar": "https://cdn.discordapp.com/avatars/332474982846431232/a_985fab4fe04d9a0737d93f6841fa8abd.gif",
-      "nickname": null
-    }
-  ]
-}
+[
+  {
+    "id": "697642680292868112",
+    "name": "🔊｜음성 통화방 [ 1 부 ]",
+    "type": 2,
+    "guildId": "697642680292868108",
+    "guildName": "만남의 광장",
+    "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
+    "members": [
+      {
+        "id": "332474982846431232",
+        "username": "mubin_c",
+        "discriminator": "0",
+        "avatar": "https://cdn.discordapp.com/avatars/332474982846431232/a_985fab4fe04d9a0737d93f6841fa8abd.gif",
+        "nickname": null
+      }
+    ]
+  },
+  {
+    "id": "714629856691748895",
+    "name": "🔊｜음성 통화방 [ 2 부 ]",
+    "type": 2,
+    "guildId": "697642680292868108",
+    "guildName": "만남의 광장",
+    "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
+    "members": []
+  },
+  {
+    "id": "842404940416679966",
+    "name": "🔊｜음성 통화방 [ 3 부 ]",
+    "type": 2,
+    "guildId": "697642680292868108",
+    "guildName": "만남의 광장",
+    "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
+    "members": []
+  },
+  {
+    "id": "842405026265301012",
+    "name": "🔊｜음성 통화방 [ 4 부 ]",
+    "type": 2,
+    "guildId": "697642680292868108",
+    "guildName": "만남의 광장",
+    "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
+    "members": []
+  }
+]
