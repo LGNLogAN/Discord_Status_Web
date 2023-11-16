@@ -6,7 +6,16 @@
     "guildId": "697642680292868108",
     "guildName": "만남의 광장",
     "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
-    "members": []
+    "guildMember": 113,
+    "members": [
+      {
+        "id": "332474982846431232",
+        "username": "mubin_c",
+        "discriminator": "0",
+        "avatar": "https://cdn.discordapp.com/avatars/332474982846431232/a_985fab4fe04d9a0737d93f6841fa8abd.gif",
+        "nickname": null
+      }
+    ]
   },
   {
     "id": "714629856691748895",
@@ -15,7 +24,16 @@
     "guildId": "697642680292868108",
     "guildName": "만남의 광장",
     "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
-    "members": []
+    "guildMember": 113,
+    "members": [
+      {
+        "id": "333959291000324096",
+        "username": "로간",
+        "discriminator": "6990",
+        "avatar": "https://cdn.discordapp.com/avatars/333959291000324096/9c8e5be82839a35161db5c247d534572.webp",
+        "nickname": null
+      }
+    ]
   },
   {
     "id": "842404940416679966",
@@ -24,6 +42,7 @@
     "guildId": "697642680292868108",
     "guildName": "만남의 광장",
     "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
+    "guildMember": 113,
     "members": []
   },
   {
@@ -33,6 +52,7 @@
     "guildId": "697642680292868108",
     "guildName": "만남의 광장",
     "guildIcon": "https://cdn.discordapp.com/icons/697642680292868108/a_7f90196251b000a79adb163a9a6dfc65.gif",
+    "guildMember": 113,
     "members": []
   }
 ]

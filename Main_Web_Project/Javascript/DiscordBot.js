@@ -36,6 +36,7 @@ function update() {
                     guildId: guild.id,
                     guildName: guild.name,
                     guildIcon: guild.iconURL(),
+                    guildMember : guild.memberCount,
                     members: channel.members.map(member => ({
                         id: member.id,
                         username: member.user.username,

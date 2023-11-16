@@ -1,0 +1,38 @@
+h1{
+    font-family: 'NPSfontBold';
+}
+small{
+    font-family : 'Gothic A1', sans-serif;
+    text-align: center;
+    color: white;
+    display: block;
+    padding-bottom: 50px;
+}
+caption{
+    font-family: 'NPSfontBold';
+    padding-bottom: 10px;
+}
+.Computer_1{
+    color : white;
+    margin:auto;
+}
+.parts{
+    padding : 0 7px 0 7px;
+    font-family: 'NanumSquare';
+}
+.Computer_1 th{
+    text-align: center;
+    padding: 3px;
+}
+.cost{
+    padding-left: 7px;
+    font-family: 'NanumSquare';
+    text-align: right;
+}
+
+.benchmark{
+    color: white;
+}
+.benchmark th{
+    border: 1px solid;
+}

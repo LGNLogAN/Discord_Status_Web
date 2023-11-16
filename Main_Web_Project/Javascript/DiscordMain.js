@@ -4,6 +4,8 @@ function aa() {
         .then(response => response.json())
         .then(json => {
         document.querySelector(".DiscordServerIMG").src = json[0].guildIcon;
+        document.querySelector(".guildMember").innerHTML = json[0].guildMember + "명이 함께하고있어요";
+
         for (i = 0; i < json[0].members.length; i++){
             const newTotalDiv = document.createElement('div');
             document.querySelector(".voiceChannel_1_members").appendChild(newTotalDiv)
